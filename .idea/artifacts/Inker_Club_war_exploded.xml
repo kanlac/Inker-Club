@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Inker Club:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Inker_Club_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Inker Club" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/../../APIs/c3p0-0.9.5.2/lib/c3p0-0.9.5.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../APIs/c3p0-0.9.5.2/lib/mchange-commons-java-0.2.11.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../APIs/commons-dbutils-1.7/commons-dbutils-1.7.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../APIs/mysql-connector-java-8.0.11/mysql-connector-java-8.0.11.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Inker Club/web/Web" />
+    </root>
+  </artifact>
+</component>
