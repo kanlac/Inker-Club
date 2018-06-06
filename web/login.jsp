@@ -12,13 +12,21 @@
 </head>
 <body>
     <div>
-        <h1>Inker Club</h1>
-        <p>there is mystery in it, not to be explained but admired</p>
+        <div>
+            <h1>Inker Club</h1>
+        </div>
+        <div>
+            <p>there is mystery in it, not to be explained but admired</p>
+        </div>
         <form action="/LoginServlet" method="post">
-            <input name="nameTxt" type="text"/>
-            <input name="passwordTxt" type="password"/>
             <div>
-                <button name="loginButton" type="submit" value="login"/>
+                <input name="nameTxt" type="text"/>
+            </div>
+            <div>
+                <input name="passwordTxt" type="password"/>
+            </div>
+            <div>
+                <button name="loginButton" type="submit">login</button>
             </div>
         </form>
     </div>
