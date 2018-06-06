@@ -9,20 +9,11 @@
 <html>
 <head>
     <title>Home</title>
-    <style>
-        .banner {
-            width: 100%;
-            height: 50px;
-        }
-        .another {
-            margin: auto;
-            margin-top: 100px;
-            width: 300px;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
     <div class="banner">
         <a href="login.jsp">login</a>
         <a href="#" style="margin: 20px;">register</a>
