@@ -14,17 +14,14 @@
     <head>
         <link rel="stylesheet" type="text/css" href="style.css"/>
     </head>
-    <div class="banner">
+    <div class="navItem">
         <a href="login.jsp">login</a>
         <a href="#" style="margin: 20px;">register</a>
         <a href="#" style="float: right;">publish</a>
     </div>
-    <div class="another">
-        <h1>Inker Club
-        </h1>
-        <div>
-        </div>
-        <p>poetry is just the evidence of life</p>
+    <div>
+        <h1 class="mainTitle">Inker Club</h1>
+        <p class="quotation">poetry is just the evidence of life</p>
     </div>
     <div>
 
