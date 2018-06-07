@@ -2,8 +2,8 @@
 
 
 
-![](design/login.jpg)
+![](design/Login.jpg)
 
-![](design/home.jpg)
+![](design/Home.jpg)
 
-![](design/detail.jpg)
+![](design/Detail.jpg)
