@@ -13,6 +13,7 @@ import java.io.PrintWriter;
 public class LoginServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=utf8");
 
         if (request.getParameter("loginButton") != null) {
 
@@ -38,9 +39,11 @@ public class LoginServlet extends HttpServlet {
                 System.out.println("Login denied.");
 
                 RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
+                rd.include(request, response);
+
                 PrintWriter out = response.getWriter();
                 out.print("<font color=red>Either user name or password is wrong.</font>");
-                rd.include(request, response);
+                out.close();
 
             }
 

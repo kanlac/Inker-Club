@@ -11,12 +11,20 @@
     <title>Home</title>
 </head>
 <body>
+    <%
+        if (session == null) {
+            System.out.println("guest");
+        } else {
+            System.out.println("login as " + session.getAttribute("user"));
+        }
+    %>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css"/>
     </head>
     <div class="navItem">
         <a href="login.jsp">login</a>
         <a href="#" style="margin: 20px;">register</a>
+        <a href="/LogoutServlet">log out</a>
         <a href="#" style="float: right;">publish</a>
     </div>
     <div>
