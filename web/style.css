@@ -1,5 +1,5 @@
 :root {
-    --width-input-div: 500px;
+    --width-input-div: 450px;
     --ttt: var(--width-input-div) - 20px;
 }
 .navItem>a {
@@ -11,8 +11,8 @@
 }
 .mainTitle {
     font-family: Cochin;
-    font-weight: normal;
-    font-size: 78px;
+    font-weight: lighter;
+    font-size: 77px;
     color: #000000;
     letter-spacing: 0;
     text-align: center;
@@ -21,23 +21,34 @@
     opacity: 0.58;
     font-family: AvenirNext-Medium;
     font-size: 18px;
-    color: #000000;
+    color: rgba(0, 0, 0, 0.85);
     letter-spacing: 0;
     text-align: center;
 }
 .inputDivFrame {
-    border: 1px solid grey;
+    border: 1px solid rgba(0, 0, 0, 0.3);
     width: var(--width-input-div);
-    height: 40px;
-    border-radius: 10px;
+    height: 48px;
+    border-radius: 13px;
     margin: auto;
     display: flex;
     align-items: center;
 }
 .inputTextFrame {
     border: none;
-    margin-left: 50px;
+    margin-left: 10px;
     height: 32px;
-    font-size: 15px;
-    width: calc(var(--width-input-div) - 40px);
+    font-size: 20px;
+    font-family: AvenirNext-Medium;
+    color: rgba(0, 0, 0, 0.60);
+    width: calc(var(--width-input-div) - 60px);
+    outline: none;
+}
+.loginButton {
+    border: none;
+    font-family: Futura;
+    font-size: 17px;
+    letter-spacing: 0;
+    text-align: center;
+    background-color: transparent;
 }
