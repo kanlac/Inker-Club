@@ -1,26 +1,43 @@
-.navItem {
-    width: 100%;
-    height: 50px;
-    font-family: 'Avenir Next';
-    font-weight: normal;
-    color: #000;
+:root {
+    --width-input-div: 500px;
+    --ttt: var(--width-input-div) - 20px;
 }
-.navItem > a {
-    font-size: 18px;
+.navItem>a {
+    font-family: AvenirNext-Medium;
+    font-size: 14px;
     color: #000;
     text-decoration: underline;
+    text-align: center;
 }
 .mainTitle {
     font-family: Cochin;
     font-weight: normal;
-    font-size: 95px;
+    font-size: 78px;
     color: #000000;
     letter-spacing: 0;
     text-align: center;
 }
 .quotation {
-    margin: auto;
-    margin-top: 30px;
-    width: 300px;
+    opacity: 0.58;
+    font-family: AvenirNext-Medium;
+    font-size: 18px;
+    color: #000000;
+    letter-spacing: 0;
     text-align: center;
+}
+.inputDivFrame {
+    border: 1px solid grey;
+    width: var(--width-input-div);
+    height: 40px;
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+.inputTextFrame {
+    border: none;
+    margin-left: 50px;
+    height: 32px;
+    font-size: 15px;
+    width: calc(var(--width-input-div) - 40px);
 }

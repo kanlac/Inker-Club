@@ -11,20 +11,23 @@
     <title>Login</title>
 </head>
 <body>
+    <header>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </header>
     <div>
-        <div>
-            <h1>Inker Club</h1>
-        </div>
-        <div>
-            <p>there is mystery in it, not to be explained but admired</p>
+        <div style="padding-top: 4%">
+            <h1 class="mainTitle" style="margin-bottom: 0px">Inker Club</h1>
+            <p class="quotation" style="margin-top: 20px;">there is mystery in it, not to be explained but admired</p>
         </div>
         <form action="/LoginServlet" method="post">
-            <div>
-                <input name="nameTxt" type="text"/>
+
+            <div class="inputDivFrame" style="margin-bottom: 30px">
+                <input name="nameTxt" type="text" class="inputTextFrame" placeholder="Username"/>
             </div>
-            <div>
-                <input name="passwordTxt" type="password"/>
+            <div class="inputDivFrame">
+                <input name="passwordTxt" type="password" class="inputTextFrame" placeholder="Password"/>
             </div>
+
             <div>
                 <button name="loginButton" type="submit">login</button>
             </div>
