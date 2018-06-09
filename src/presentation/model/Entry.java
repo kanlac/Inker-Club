@@ -50,4 +50,9 @@ public class Entry implements Serializable {
     public void setContent(String content) {
         this.content = content;
     }
+
+    @Override
+    public String toString() {
+        return String.format("entry bean:\n%3s | %15s | %tD | %s | %s", getE_id(), getTitle(), getDate(), getAuthor(), getContent());
+    }
 }
