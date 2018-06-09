@@ -13,9 +13,10 @@
 <body>
     <header>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="reset.css"/>
     </header>
     <div>
-        <div style="padding-top: 4%">
+        <div style="padding-top: 12%">
             <h1 class="mainTitle" style="margin-bottom: 0px">Inker Club</h1>
             <p class="quotation" style="margin-top: 20px">there is mystery in it, not to be explained but admired</p>
         </div>
@@ -37,6 +38,7 @@
 
             <div style="width: 450px; margin: auto;">
                 <a href="home.jsp" class="loginButton" style="text-decoration: none; color: #649FD3;">view as guest</a>
+
                 <button name="loginButton" type="submit" class="loginButton" style="float: right; color: #28CA42; cursor: pointer;">login</button>
             </div>
         </form>
