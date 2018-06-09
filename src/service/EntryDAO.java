@@ -94,4 +94,20 @@ public class EntryDAO {
         return rBean;
     }
 
+    public static List<Entry> getLatestEntries(int limit) {
+
+        qr = new QueryRunner();
+        sql = "SELECT * FROM entry ORDER BY date DESC LIMIT ?";
+        params = new Object[] { limit };
+        List<Entry> beanList = null;
+
+        try {
+            beanList = (List<Entry>) qr.query(C3P0Utils.getConnection(), sql, new BeanListHandler(Entry.class), params);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return beanList;
+    }
+
 }
