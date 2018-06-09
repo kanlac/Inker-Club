@@ -17,8 +17,8 @@ public class LoginServlet extends HttpServlet {
 
         if (request.getParameter("loginButton") != null) {
 
-            String nameField = request.getParameter("nameTxt");
-            String passwordField = request.getParameter("passwordTxt");
+            String nameField = request.getParameter("l_name_txt");
+            String passwordField = request.getParameter("l_password_txt");
 
             if (UserDAO.find(nameField, passwordField)) {
 
@@ -51,7 +51,6 @@ public class LoginServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 
     }
 }

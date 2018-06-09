@@ -28,7 +28,7 @@
         if (user == null) {
     %>
         <a href="login.jsp">login</a>
-        <a href="#" style="margin: 20px;">register</a>
+        <a href="register.jsp" style="margin: 20px;">register</a>
     <%
         } else {
     %>
