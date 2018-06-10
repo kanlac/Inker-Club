@@ -71,19 +71,6 @@
     width: calc(var(--login-form-div-width) - 60px);
     outline: none;
 }
-.loginButton>a {
-    font-family: Futura;
-    font-size: 17px;
-    text-decoration: none;
-}
-.loginButton>button {
-    font-family: Futura;
-    font-size: 17px;
-    float: right;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-}
 
 .registerSheet {
     border: 1px solid rgba(0, 0, 0, 0.3);
@@ -97,14 +84,30 @@
 }
 .registerSheet>input {
     opacity: 0.5;
-    font-family: CourierNewPS;
+    font-family: AvenirNext;
     font-size: 20px;
-    color: #000000;
-    letter-spacing: 0;
+    letter-spacing: 1px;
     border: none;
     margin-left: 10px;
     width: calc(var(--register-form-div-width) - 30px);
     outline: none;
+}
+
+.signButton {
+    margin: auto;
+}
+.signButton>a {
+    font-family: Futura;
+    font-size: 17px;
+    text-decoration: none;
+}
+.signButton>button {
+    font-family: Futura;
+    font-size: 17px;
+    float: right;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
 }
 
 .container {

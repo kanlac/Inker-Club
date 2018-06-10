@@ -36,7 +36,7 @@
 
         <br/><br/>
 
-        <div style="width: 450px; margin: auto" class="loginButton">
+        <div class="signButton" style="width: 450px;">
             <a href="home.jsp" id="guest">view as guest</a>
             <a href="register.jsp" id="register" style="float: left;margin-left: 15px;">register</a>
             <button name="loginButton" id="login" type="submit" style="border: none;">login</button>

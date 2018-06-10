@@ -37,14 +37,14 @@
             <input name="r_confirm_txt" type="password" placeholder="CONFIRM">
         </div>
 
-        <br/>
+        <br/><br/>
 
+        <div class="signButton" style="width: 430px;">
+            <a href="home.jsp" id="guest">view as guest</a>
+            <a href="login.jsp" id="login" style="float: left;margin-left: 15px;">log in</a>
+            <button name="loginButton" id="register" type="submit" style="border: none;">register</button>
+        </div>
 
-        <%--<div style="width: 450px; margin: auto" class="loginButton">--%>
-            <%--<a href="home.jsp" id="guest">view as guest</a>--%>
-            <%--<a href="register.jsp" id="register" style="float: left;margin-left: 15px;">register</a>--%>
-            <%--<button name="loginButton" id="login" type="submit" style="border: none;">login</button>--%>
-        <%--</div>--%>
     </form>
 
 </body>
