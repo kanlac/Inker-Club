@@ -3,6 +3,8 @@
     --login-form-div-height: 48px;
     --register-form-div-width: 430px;
     --view-as-guest-color: #649FD3;
+    --social-logo-edge: 20px;
+    --social-logo-margin: 20px;
 }
 .navItem {
     position: fixed;
@@ -123,11 +125,24 @@
 }
 .container #content {
     font-family: AvenirNext-Regular;
-    font-size: 16px;
+    font-size: 20px;
     color: #000000;
     letter-spacing: 0;
     margin-top: 25px;
-    line-height: 23px;
+    line-height: 29px;
+}
+.socialLogo {
+    margin: auto;
+    margin-top: 4%;
+    --widthA: calc(var(--social-logo-margin) * 2);
+    --widthB: calc(var(--widthA) + var(--social-logo-edge));
+    /* weird extra pixels... */
+    width: calc(var(--widthB) * 3 + 8px);
+}
+.socialLogo img {
+    width: var(--social-logo-edge);
+    height: var(--social-logo-edge);
+    margin: var(--social-logo-margin);
 }
 #guest {
     color: #649FD3;
