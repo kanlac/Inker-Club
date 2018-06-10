@@ -9,37 +9,39 @@
 <%@ page import="java.util.List" %>
 <%@ page import="service.EntryDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    Object user = session.getAttribute("user");
+    System.out.println("Current account: " + (user == null ? "guest" : user));
+%>
 <html>
 <head>
-    <title>Home</title>
+    <title>Inker Club</title>
 </head>
 <body>
-    <%
-        Object user = session.getAttribute("user");
-        System.out.println("Current account: " + (user == null ? "guest" : user));
-    %>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <link rel="stylesheet" type="text/css" href="reset.css"/>
     </head>
 
     <div class="navItem">
-    <%
-        if (user == null) {
-    %>
-        <a href="login.jsp">login</a>
-        <a href="register.jsp" style="margin: 20px;">register</a>
-    <%
-        } else {
-    %>
-        <p style="float: left; margin-right: 5px; text-decoration: none">
-            login as <span> <%=user%></span>.
-        </p>
-        <a href="/LogoutServlet">log out</a>
-        <a href="#" style="float: right; margin-right: 10px;">publish</a>
-    <%
-        }
-    %>
+        <%
+            if (user == null) {
+        %>
+            <a href="login.jsp">login</a>
+            <a href="register.jsp">register</a>
+        <%
+            } else {
+        %>
+            <p style="float: left; text-decoration: none">
+                login as <span style="color: #649FD3"> <%=user%></span>.
+            </p>
+            <a href="/LogoutServlet">log out</a>
+            <div style="float: right;">
+                <a href="publish.jsp">publish</a>
+            </div>
+        <%
+            }
+        %>
     </div>
 
     <div style="padding-top: 10%">
@@ -51,11 +53,10 @@
         List<Entry> entryList = EntryDAO.getLatestEntries(6);
 
         for (Entry entry: entryList) {
-
     %>
     <div style="margin: auto; width: 600px; padding-top: 100px;">
         <div>
-            <h2 class="homeTitle"><%=entry.getTitle()%></h2>
+            <a href="./entry.jsp?id=<%=entry.getE_id()%>" style="text-decoration: none"><h2 class="homeTitle"><%=entry.getTitle()%></h2></a>
         </div>
         <div>
             <p class="entryInfo"><%=entry.getDate()%> | <%=entry.getAuthor()%></p>
