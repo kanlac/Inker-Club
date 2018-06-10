@@ -17,7 +17,7 @@
 <head>
     <title>Inker Club</title>
 </head>
-<body>
+<body class="bodyPadding">
     <head>
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <link rel="stylesheet" type="text/css" href="reset.css"/>
@@ -46,13 +46,13 @@
 
     <div style="margin-top: 10%">
 
-        <h1 class="mainTitle">Inker Club</h1>
+        <h1 class="siteTitle">Inker Club</h1>
         <div class="socialLogo">
             <img src="pic/social/google-plus-logo-button.jpg" alt="google plus"/>
             <img src="pic/social/linkedin-logo-button.jpg" alt="linkedin"/>
             <img src="pic/social/facebook-logo-button.jpg" alt="facebook"/>
         </div>
-        <p class="quotation" style="padding-top: 10px">poetry is just the evidence of life</p>
+        <p class="siteQuote" style="padding-top: 10px">poetry is just the evidence of life</p>
 
     </div>
 
@@ -64,7 +64,7 @@
     <div class="container">
 
         <a href="./entry.jsp?id=<%=entry.getE_id()%>" style="text-decoration: none">
-            <h2 id="title" class="homeTitle" style="color: rgba(0, 0, 0, 0.7);"><%=entry.getTitle()%></h2>
+            <h2 id="title_home" style="color: rgba(0, 0, 0, 0.8);"><%=entry.getTitle()%></h2>
         </a>
         <p id="info"><%=entry.getDate()%> | <%=entry.getAuthor()%></p>
         <p id="content"><%=entry.getContent()%></p>

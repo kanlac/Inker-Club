@@ -17,19 +17,19 @@
     </header>
 
     <div style="margin-top: 9%">
-        <h1 class="mainTitle" style="margin-bottom: 0px">Inker Club</h1>
-        <p class="quotation" style="margin-top: 20px">there is mystery in it, not to be explained but admired</p>
+        <h1 class="siteTitle" style="margin-bottom: 0px">Inker Club</h1>
+        <p class="siteQuote" style="margin-top: 20px">there is mystery in it, not to be explained but admired</p>
     </div>
 
     <br/> <br/> <br/> <br/> <br/>
 
     <form action="/LoginServlet" method="post">
 
-        <div class="login_form_div" style="margin-bottom: 30px">
+        <div class="loginSheet" style="margin-bottom: 30px">
             <img src="pic/username.jpg" alt="username" style="width: 19px; height: 22px; margin-left: 18px;">
             <input name="l_name_txt" type="text"/>
         </div>
-        <div class="login_form_div">
+        <div class="loginSheet">
             <img src="pic/password.jpg" alt="password" style="width: 16.5px; height: 22px; margin-left: 18px;">
             <input name="l_password_txt" type="password"/>
         </div>

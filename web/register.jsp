@@ -17,23 +17,23 @@
     </header>
 
     <div style="margin-top: 9%">
-        <h1 class="mainTitle" style="margin-bottom: 0px">Inker Club</h1>
-        <p class="quotation" style="margin-top: 20px">there is mystery in it, not to be explained but admired</p>
+        <h1 class="siteTitle" style="margin-bottom: 0px">Inker Club</h1>
+        <p class="siteQuote" style="margin-top: 20px">there is mystery in it, not to be explained but admired</p>
     </div>
 
     <br/> <br/> <br/>
 
     <form action="/RegisterServlet" method="post">
 
-        <div class="register_form_div">
+        <div class="registerSheet">
             <input name="r_name_txt" type="text" placeholder="USERNAME">
         </div>
         <br/>
-        <div class="register_form_div">
+        <div class="registerSheet">
             <input name="r_password_txt" type="password" placeholder="PASSWORD">
         </div>
         <br/>
-        <div class="register_form_div">
+        <div class="registerSheet">
             <input name="r_confirm_txt" type="password" placeholder="CONFIRM">
         </div>
 

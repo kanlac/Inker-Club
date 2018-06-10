@@ -20,7 +20,7 @@
 <head>
     <title><%=entry.getTitle()%></title>
 </head>
-<body>
+<body class="bodyPadding">
     <head>
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <link rel="stylesheet" type="text/css" href="reset.css"/>
@@ -58,13 +58,13 @@
 
     <div class="container">
 
-        <h1 id="title"><%=entry.getTitle()%></h1>
-        <p id="info"><%=entry.getDate()%> | <%=entry.getAuthor()%></p>
+        <h1 id="title_detail"><%=entry.getTitle()%></h1>
+        <p id="info"><%=entry.getDate()%> | <%=entry.getAuthor()%></p> <br/>
         <p id="content"><%=entry.getContent()%></p>
 
     </div>
 
-    <hr style="width: 45%; opacity: 0.3; margin: 60px auto"/>
+    <hr style="width: 50%; opacity: 0.3; margin: 80px auto"/>
 
     <p style="opacity: 0.63;font-family: Futura-MediumItalic;font-size: 16px;text-align: center;">Share</p>
     <div class="shareLogo">
