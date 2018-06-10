@@ -56,10 +56,11 @@
 
     <br/>
 
-    <div style="width: 75%; margin: auto; margin-top: 10%">
+    <div class="container">
 
-        <h1 class="entryTitle"><%=entry.getTitle()%></h1>
-
+        <h1 id="title"><%=entry.getTitle()%></h1>
+        <p id="info"><%=entry.getDate()%> | <%=entry.getAuthor()%></p>
+        <p id="content"><%=entry.getContent()%></p>
 
     </div>
 

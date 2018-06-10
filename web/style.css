@@ -100,7 +100,19 @@
     color: rgba(0, 0, 0, 0.9);
     letter-spacing: 0;
 }
-.entryInfo {
+.container {
+    width: 65%;
+    margin: auto;
+    margin-top: 10%;
+
+}
+.container #title {
+    font-family: ChaparralPro-Bold;
+    font-size: 38px;
+    color: rgba(0, 0, 0, 0.9);
+    letter-spacing: 0;
+}
+.container #info {
     opacity: 0.68;
     font-family: Futura-MediumItalic;
     font-size: 13px;
@@ -109,19 +121,13 @@
     text-align: left;
     margin-top: 10px;
 }
-.homeContent {
+.container #content {
     font-family: AvenirNext-Regular;
     font-size: 16px;
     color: #000000;
     letter-spacing: 0;
     margin-top: 25px;
     line-height: 23px;
-}
-.entryTitle {
-    font-family: ChaparralPro-Bold;
-    font-size: 38px;
-    color: rgba(0, 0, 0, 0.9);
-    letter-spacing: 0;
 }
 #guest {
     color: #649FD3;

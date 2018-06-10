@@ -54,16 +54,14 @@
 
         for (Entry entry: entryList) {
     %>
-    <div style="margin: auto; width: 600px; padding-top: 100px;">
-        <div>
-            <a href="./entry.jsp?id=<%=entry.getE_id()%>" style="text-decoration: none"><h2 class="homeTitle"><%=entry.getTitle()%></h2></a>
-        </div>
-        <div>
-            <p class="entryInfo"><%=entry.getDate()%> | <%=entry.getAuthor()%></p>
-        </div>
-        <div class="homeContent">
-            <%=entry.getContent()%>
-        </div>
+    <div class="container">
+
+        <a href="./entry.jsp?id=<%=entry.getE_id()%>" style="text-decoration: none">
+            <h2 id="title" class="homeTitle" style="color: rgba(0, 0, 0, 0.8);"><%=entry.getTitle()%></h2>
+        </a>
+        <p id="info"><%=entry.getDate()%> | <%=entry.getAuthor()%></p>
+        <p id="content"><%=entry.getContent()%></p>
+
     </div>
     <%
         }
