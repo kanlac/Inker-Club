@@ -9,18 +9,21 @@
     top: 0;
     width: 100%;
     margin-top: 4px;
-    margin-left: 10px;
+    margin-left: 3px;
+    margin-right: 3px;
 }
 .navItem>div {
     background-color: white;
 }
-.navItem>a, .navItem>p {
+.navItem a, .navItem>p {
     font-family: AvenirNext-Medium;
     font-size: 14px;
     color: #000;
     text-decoration: underline;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.9);
+    margin-left: 6px;
+    margin-right: 6px;
 }
 .mainTitle {
     font-family: Cochin;
@@ -68,6 +71,7 @@
     float: right;
     cursor: pointer;
     border: none;
+    background-color: transparent;
 }
 .register_form_div {
     border: 1px solid rgba(0, 0, 0, 0.3);
@@ -112,6 +116,12 @@
     letter-spacing: 0;
     margin-top: 25px;
     line-height: 23px;
+}
+.entryTitle {
+    font-family: ChaparralPro-Bold;
+    font-size: 38px;
+    color: rgba(0, 0, 0, 0.9);
+    letter-spacing: 0;
 }
 #guest {
     color: #649FD3;
