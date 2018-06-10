@@ -78,7 +78,7 @@ public class EntryDAO {
      * Queries.
      */
 
-    public static Entry getEntry(String id) {
+    public static Entry getEntry(int id) {
 
         qr = new QueryRunner();
         sql = "SELECT * FROM entry WHERE e_id = ?";
