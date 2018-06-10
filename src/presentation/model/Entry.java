@@ -5,17 +5,17 @@ import java.sql.Date;
 
 public class Entry implements Serializable {
 
-    private String e_id;
+    private int e_id;
     private String title;
     private Date date;
     private String author;
     private String content;
 
-    public String getE_id() {
+    public int getE_id() {
         return e_id;
     }
 
-    public void setE_id(String e_id) {
+    public void setE_id(int e_id) {
         this.e_id = e_id;
     }
 
@@ -53,6 +53,6 @@ public class Entry implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("entry bean:\n%3s | %15s | %tD | %s | %s", getE_id(), getTitle(), getDate(), getAuthor(), getContent());
+        return String.format("entry bean:\n%3d | %15s | %tD | %s | %s", getE_id(), getTitle(), getDate(), getAuthor(), getContent());
     }
 }
