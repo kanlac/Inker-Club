@@ -64,5 +64,14 @@
 
     </div>
 
+    <hr style="width: 45%; opacity: 0.3; margin: 60px auto"/>
+
+    <p style="opacity: 0.63;font-family: Futura-MediumItalic;font-size: 16px;text-align: center;">Share</p>
+    <div class="shareLogo">
+        <img src="pic/share/facebook.jpg" alt="facebook"/>
+        <img src="pic/share/twitter.jpg" alt="twitter" />
+        <img src="pic/share/whatsapp%20copy.jpg" alt="whatsapp" />
+    </div>
+
 </body>
 </html>

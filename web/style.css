@@ -5,6 +5,8 @@
     --view-as-guest-color: #649FD3;
     --social-logo-edge: 20px;
     --social-logo-margin: 20px;
+    --share-logo-edge: 38px;
+    --share-logo-margin: 28px;
 }
 .navItem {
     position: fixed;
@@ -134,15 +136,26 @@
 .socialLogo {
     margin: auto;
     margin-top: 4%;
-    --widthA: calc(var(--social-logo-margin) * 2);
-    --widthB: calc(var(--widthA) + var(--social-logo-edge));
+    --a: calc(var(--social-logo-margin) * 2);
+    --b: calc(var(--a) + var(--social-logo-edge));
     /* weird extra pixels... */
-    width: calc(var(--widthB) * 3 + 8px);
+    width: calc(var(--b) * 3 + 8px);
 }
 .socialLogo img {
     width: var(--social-logo-edge);
     height: var(--social-logo-edge);
     margin: var(--social-logo-margin);
+}
+.shareLogo {
+    margin: auto;
+    --c: calc(var(--share-logo-margin) * 2);
+    --d: calc(var(--c) + var(--share-logo-edge));
+    width: calc(var(--d) * 3 + 8px);
+}
+.shareLogo img {
+    width: var(--share-logo-edge);
+    height: var(--share-logo-edge);
+    margin: var(--share-logo-margin);
 }
 #guest {
     color: #649FD3;
