@@ -18,7 +18,7 @@ public class LoginServlet extends HttpServlet {
         String nameField = request.getParameter("l_name_txt");
         String passwordField = request.getParameter("l_password_txt");
 
-        if (UserDAO.find(nameField, passwordField)) {
+        if (UserDAO.login(nameField, passwordField)) {
 
             System.out.println("Login success!");
 
