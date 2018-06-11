@@ -32,6 +32,9 @@
         %>
         <a href="login.jsp">login</a>
         <a href="register.jsp">register</a>
+        <div style="float: right;">
+            <a href="home.jsp">Home</a>
+        </div>
         <%
             } else {
         %>
@@ -39,10 +42,12 @@
             login as <span style="color: #649FD3"> <%=user%></span>.
         </p>
         <a href="/LogoutServlet">log out</a>
+
+        <div style="float: right;">
+            <a href="home.jsp">Home</a>
             <%
                 if (user.equals(entry.getAuthor())) {
             %>
-        <div style="float: right;">
             <a href="publish.jsp?id=<%=entry.getE_id()%>">Edit</a>
             <%
                 }
