@@ -22,6 +22,13 @@ public class EntryDAO {
 
     public static Boolean insert(Entry entry) {
 
+        // convert utilDate to sqlDate...
+        //        java.util.Date utilDate = new java.util.Date();
+//        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+//        java.sql.Time sqlTime = new java.sql.Time(utilDate.getTime());
+
+//        String datetime = sqlDate.toString() + " " + sqlTime.toString();
+
         qr = new QueryRunner();
         rows = 0;
         sql = "INSERT INTO entry (title, date, author, content) VALUES (?, ?, ?, ?)";
@@ -86,7 +93,7 @@ public class EntryDAO {
         Entry rBean = new Entry();
 
         try {
-            rBean = (Entry) qr.query(C3P0Utils.getConnection(), sql, new BeanHandler(Entry.class), params);
+            rBean = (Entry) qr.query(C3P0Utils.getConnection(), sql, new BeanHandler<>(Entry.class), params);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -102,7 +109,7 @@ public class EntryDAO {
         List<Entry> beanList = null;
 
         try {
-            beanList = (List<Entry>) qr.query(C3P0Utils.getConnection(), sql, new BeanListHandler(Entry.class), params);
+            beanList = qr.query(C3P0Utils.getConnection(), sql, new BeanListHandler<>(Entry.class), params);
         } catch (SQLException e) {
             e.printStackTrace();
         }
