@@ -10,21 +10,17 @@
 <%@ page import="service.EntryDAO" %>
 <%
     Object user = session.getAttribute("user");
-    System.out.println("Current account: " + (user == null ? "guest" : user));
 
-    System.out.println("get param: " + request.getParameter("id"));
     int e_id = Integer.parseInt(request.getParameter("id"));
     Entry entry = EntryDAO.getEntry(e_id);
 %>
 <html>
 <head>
     <title><%=entry.getTitle()%></title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="reset.css"/>
 </head>
 <body class="bodyPadding">
-    <head>
-        <link rel="stylesheet" type="text/css" href="style.css"/>
-        <link rel="stylesheet" type="text/css" href="reset.css"/>
-    </head>
 
     <div class="navItem">
         <%
