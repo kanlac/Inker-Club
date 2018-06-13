@@ -3,4 +3,24 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <filter>
+        <filter-name>PublishFilter</filter-name> <!-- mandatory -->
+        <filter-class>presentation.controller.filter.PublishFilter</filter-class> <!-- mandatory -->
+        <init-param> <!-- optional -->
+            <param-name>test</param-name>
+            <param-value>testValue</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>PublishFilter</filter-name> <!-- mandatory -->
+        <!-- either url-pattern or servlet-name is mandatory -->
+        <!--<url-pattern>/*</url-pattern> -->
+        <servlet-name>PublishServlet</servlet-name>
+        <!--the possible values are REQUEST, FORWARD, INCLUDE, ERROR and ASYNC. If no dispatcher is defined then it’s applied only to client requests.-->
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+    </filter-mapping>
+
 </web-app>
