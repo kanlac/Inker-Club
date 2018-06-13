@@ -11,17 +11,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     Object user = session.getAttribute("user");
-    System.out.println("Current account: " + (user == null ? "guest" : user));
 %>
 <html>
 <head>
     <title>Inker Club</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="reset.css"/>
 </head>
 <body class="bodyPadding">
-    <head>
-        <link rel="stylesheet" type="text/css" href="style.css"/>
-        <link rel="stylesheet" type="text/css" href="reset.css"/>
-    </head>
 
     <div class="navItem">
         <%
@@ -58,8 +55,12 @@
 
     <%
         List<Entry> entryList = EntryDAO.getLatestEntries(6);
-
-        for (Entry entry: entryList) {
+        if (entryList == null) {
+    %>
+    <p>Entries load error. <a href="home.jsp">Reload</a> </p>
+    <%
+        } else {
+            for (Entry entry: entryList) {
     %>
     <div class="container">
 
@@ -71,8 +72,10 @@
 
     </div>
     <%
+            }
         }
     %>
+
 
 </body>
 </html>
