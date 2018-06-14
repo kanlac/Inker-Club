@@ -20,20 +20,19 @@ public class EntryDAO {
      * Updates.
      */
 
-    public static Boolean insert(Entry entry) {
+    public static Boolean insert(String title, String author, String content) {
 
         // convert utilDate to sqlDate...
-        //        java.util.Date utilDate = new java.util.Date();
-//        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-//        java.sql.Time sqlTime = new java.sql.Time(utilDate.getTime());
-
-//        String datetime = sqlDate.toString() + " " + sqlTime.toString();
+        java.util.Date utilDate = new java.util.Date();
+        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        java.sql.Time sqlTime = new java.sql.Time(utilDate.getTime());
+        String datetime = sqlDate.toString() + " " + sqlTime.toString();
 
         qr = new QueryRunner();
         rows = 0;
         sql = "INSERT INTO entry (title, date, author, content) VALUES (?, ?, ?, ?)";
         params = new Object[] {
-            entry.getTitle(), entry.getDate(), entry.getAuthor(), entry.getContent()
+            title, datetime, author, content
         };
 
         try {
@@ -100,6 +99,22 @@ public class EntryDAO {
 
         return rBean;
     }
+
+//    public static Entry getEntry(String title) {
+//
+//        qr = new QueryRunner();
+//        sql = "SELECT * FROM entry WHERE title = ?";
+//        params = new Object[] { title };
+//        Entry rBean = new Entry();
+//
+//        try {
+//            rBean = (Entry) qr.query(C3P0Utils.getConnection(), sql, new BeanHandler<>(Entry.class), params);
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//
+//        return rBean;
+//    }
 
     public static List<Entry> getLatestEntries(int limit) {
 
