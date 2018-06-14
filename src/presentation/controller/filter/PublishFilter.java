@@ -26,11 +26,9 @@ public class PublishFilter implements Filter {
         if (title.equals("") || content.equals("")) {
             System.out.println("Either title or content is null.");
 
-            RequestDispatcher rd = req.getRequestDispatcher("/publish.jsp");
-            rd.include(req, resp);
-
             PrintWriter out = resp.getWriter();
-            out.print("<br/><br/><br/><p style='text-align: center; color: #D0021B; font-family: Menlo-Regular;'>Error: Please fill in title or content.</p>");
+            out.print("<p style='color: #D0021B; font-family: Menlo-Regular;'>Error: Please fill in title or content.</p>");
+            out.print("<a href='/publish.jsp'>Return</a>");
             out.close();
         } else {
             chain.doFilter(req, resp);
