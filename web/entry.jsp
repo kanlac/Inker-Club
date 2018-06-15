@@ -11,8 +11,15 @@
 <%
     Object user = session.getAttribute("user");
 
-    int e_id = Integer.parseInt(request.getParameter("id"));
-    Entry entry = EntryDAO.getEntry(e_id);
+    Entry entry;
+    Object getId = request.getParameter("id");
+    if (getId != null) {
+        int e_id = Integer.parseInt(getId.toString());
+        entry = EntryDAO.getEntry(e_id);
+    } else {
+        String title = request.getParameter("title");
+        entry = EntryDAO.getEntry(title);
+    }
 %>
 <html>
 <head>

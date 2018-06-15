@@ -100,21 +100,21 @@ public class EntryDAO {
         return rBean;
     }
 
-//    public static Entry getEntry(String title) {
-//
-//        qr = new QueryRunner();
-//        sql = "SELECT * FROM entry WHERE title = ?";
-//        params = new Object[] { title };
-//        Entry rBean = new Entry();
-//
-//        try {
-//            rBean = (Entry) qr.query(C3P0Utils.getConnection(), sql, new BeanHandler<>(Entry.class), params);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return rBean;
-//    }
+    public static Entry getEntry(String title) {
+
+        qr = new QueryRunner();
+        sql = "SELECT * FROM entry WHERE title = ?";
+        params = new Object[] { title };
+        Entry rBean = new Entry();
+
+        try {
+            rBean = (Entry) qr.query(C3P0Utils.getConnection(), sql, new BeanHandler<>(Entry.class), params);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return rBean;
+    }
 
     public static List<Entry> getLatestEntries(int limit) {
 
