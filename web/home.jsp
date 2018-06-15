@@ -17,7 +17,6 @@
     List<Entry> entries = EntryDAO.getAllEntries();
     int piece = 4;
     int totalPages = (int) Math.ceil((double)(entries.size()) / (double)(piece));
-    System.out.println("size: " + entries.size() + " piece: " + piece + " total: " + totalPages);
     if (totalPages == 0) totalPages = 1;
 
     int pagi;
@@ -76,7 +75,6 @@
     <%
         } else {
             for (int i = start; i < entries.size() && i < start + piece; i++) {
-                System.out.println("current i: " + i);
                 Entry entry = entries.get(i);
     %>
     <div class="container">
@@ -93,14 +91,38 @@
         }
     %>
 
-    <%-- Pagination --%>
+    <%------ Pagination ------%>
+    <div class="paging">
     <%
-        for (int i = 1; i <= totalPages; i++) {
+        // back button
+        if (pagi == 1) {
     %>
-    <a href="home.jsp?pagi=<%=i%>"><%=i%></a>
+        <a style="opacity: 0.5;">Back.</a>
+    <%
+        } else {
+    %>
+        <a href="home.jsp?pagi=<%=pagi - 1%>">Back.</a>
+    <%
+        }
+        // prev button
+        if (pagi == totalPages) {
+    %>
+        <a style="opacity: 0.5;">Prev.</a>
+    <%
+        } else {
+    %>
+        <a href="home.jsp?pagi=<%=pagi + 1%>">Prev.</a>
     <%
         }
     %>
+
+
+        <%--<a href="home.jsp?pagi=<%=i%>"><%=i%></a>--%>
+
+    <%
+
+    %>
+    </div>
 
 
 </body>
