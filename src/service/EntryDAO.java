@@ -132,4 +132,19 @@ public class EntryDAO {
         return beanList;
     }
 
+    public static List<Entry> getAllEntries() {
+
+        qr = new QueryRunner();
+        sql = "SELECT * FROM entry ORDER BY date DESC";
+        List<Entry> beanList = null;
+
+        try {
+            beanList = qr.query(C3P0Utils.getConnection(), sql, new BeanListHandler<>(Entry.class));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return beanList;
+    }
+
 }
