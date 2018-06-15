@@ -12,6 +12,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     Object user = session.getAttribute("user");
+    Object pagiObj = request.getParameter("pagi");
+
+    List<Entry> entries = EntryDAO.getAllEntries();
+    int piece = 4;
+    int totalPages = (int) Math.ceil((double)(entries.size()) / (double)(piece));
+    System.out.println("size: " + entries.size() + " piece: " + piece + " total: " + totalPages);
+    if (totalPages == 0) totalPages = 1;
+
+    int pagi;
+    if (pagiObj == null)
+        pagi = 1;
+    else
+        pagi = Integer.parseInt(pagiObj.toString());
+    int start = (pagi - 1) * piece;
 %>
 <html>
 <head>
@@ -54,14 +68,16 @@
 
     </div>
 
+    <%--<p style="text-align: center">sum: <%=entries.size()%> pages: <%=pages%> pagi: <%=pagi%></p>--%>
     <%
-        List<Entry> entryList = EntryDAO.getLatestEntries(6);
-        if (entryList == null) {
+        if (entries.size() == 0) {
     %>
     <p>Entries load error. <a href="home.jsp">Reload</a> </p>
     <%
         } else {
-            for (Entry entry: entryList) {
+            for (int i = start; i < entries.size() && i < start + piece; i++) {
+                System.out.println("current i: " + i);
+                Entry entry = entries.get(i);
     %>
     <div class="container">
 
@@ -74,6 +90,15 @@
     </div>
     <%
             }
+        }
+    %>
+
+    <%-- Pagination --%>
+    <%
+        for (int i = 1; i <= totalPages; i++) {
+    %>
+    <a href="home.jsp?pagi=<%=i%>"><%=i%></a>
+    <%
         }
     %>
 
