@@ -7,6 +7,7 @@
     --social-logo-margin: 20px;
     --share-logo-edge: 38px;
     --share-logo-margin: 28px;
+    --container-width: 65%;
 }
 
 .bodyPadding {
@@ -112,7 +113,7 @@
 }
 
 .container {
-    width: 65%;
+    width: var(--container-width);
     margin: auto;
     margin-top: 10%;
 }
@@ -196,6 +197,19 @@
     resize: none;
     min-height: 50px;
     outline: none;
+}
+
+.paging {
+    width: var(--container-width);
+    margin: 80px auto;
+    text-align: right;
+}
+.paging>a {
+    font-family: Cochin-Italic;
+    font-size: 20px;
+    color: #2F3542;
+    text-decoration: none;
+    margin: 0 10px;
 }
 
 #guest {
