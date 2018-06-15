@@ -8,6 +8,7 @@
 <%@ page import="presentation.model.Entry" %>
 <%@ page import="java.util.List" %>
 <%@ page import="service.EntryDAO" %>
+<%@ page import="java.util.Date" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     Object user = session.getAttribute("user");
@@ -64,10 +65,10 @@
     %>
     <div class="container">
 
-        <a href="./entry.jsp?id=<%=entry.getE_id()%>" style="text-decoration: none">
+        <a href="entry.jsp?id=<%=entry.getE_id()%>" style="text-decoration: none">
             <h2 id="title_home" style="color: rgba(0, 0, 0, 0.8);"><%=entry.getTitle()%></h2>
         </a>
-        <p id="info"><%=entry.getDate()%> | <%=entry.getAuthor()%></p>
+        <p id="info"><%=entry.getDate().toString().substring(0, 10)%> | <%=entry.getAuthor()%></p>
         <p id="content"><%=entry.getContent()%></p>
 
     </div>
