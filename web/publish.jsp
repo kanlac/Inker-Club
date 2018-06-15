@@ -25,7 +25,9 @@
         <div style="float: right;">
             <a>Delete</a>
             <a>Cancel</a>
-            <a>Save</a>
+            <label for="submitBtn" style="cursor: pointer;">
+                <a>Save</a>
+            </label>
         </div>
     </div>
 
@@ -54,7 +56,7 @@
         <input id="titleArea" name="title" type="text" placeholder="Input your title here.."/>
         <div id="articleArea" contenteditable="true"></div>
         <textarea id="textBox" name="content" style="display: none;"></textarea>
-        <button type="submit" onclick="filter()">publish</button>
+        <button id="submitBtn" type="submit" onclick="filter()" style="display: none;">publish</button>
 
     </form>
 
