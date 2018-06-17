@@ -1,5 +1,6 @@
 package presentation.controller;
 
+import presentation.model.Entry;
 import service.EntryDAO;
 
 import javax.servlet.ServletException;
@@ -23,9 +24,11 @@ public class PublishServlet extends HttpServlet {
         if (EntryDAO.insert(title, author, content)) {
             System.out.println("Post success!");
 
+            int e_id = EntryDAO.getEntry(title).getE_id();
+
             PrintWriter out = response.getWriter();
-            out.print("<h1>Post success!</h1>");
-            out.print("<a href='entry.jsp?title=" + title + "'>OK</a>");
+            out.print("<p>Post success!</p>");
+            out.print("<a href='entry.jsp?id=" + e_id + "'>OK</a>");
         } else {
             System.out.println("Post failed.");
         }

@@ -11,15 +11,8 @@
 <%
     Object user = session.getAttribute("user");
 
-    Entry entry;
-    Object getId = request.getParameter("id");
-    if (getId != null) {
-        int e_id = Integer.parseInt(getId.toString());
-        entry = EntryDAO.getEntry(e_id);
-    } else {
-        String title = request.getParameter("title");
-        entry = EntryDAO.getEntry(title);
-    }
+    int e_id = Integer.parseInt(request.getParameter("id"));
+    Entry entry = EntryDAO.getEntry(e_id);
 %>
 <html>
 <head>
@@ -67,7 +60,7 @@
     <div class="container">
 
         <h1 id="title_detail"><%=entry.getTitle()%></h1>
-        <p id="info"><%=entry.getDate()%> | <%=entry.getAuthor()%></p> <br/>
+        <p id="info"><%=entry.getDate().toString().substring(0, 10)%> | <%=entry.getAuthor()%></p> <br/>
         <p id="content"><%=entry.getContent()%></p>
 
     </div>
