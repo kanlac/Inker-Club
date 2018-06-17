@@ -1,5 +1,4 @@
-<%@ page import="presentation.model.Entry" %>
-<%@ page import="service.EntryDAO" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: serfusE
   Date: 2018/6/17
