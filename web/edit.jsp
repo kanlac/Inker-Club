@@ -7,6 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="presentation.model.Entry" %>
+<%@ page import="service.EntryDAO" %>
 <%
     Object user = session.getAttribute("user");
     int e_id = Integer.parseInt(request.getParameter("id"));
@@ -49,8 +51,7 @@
 
     <script type="text/javascript">
         window.onload = function () {
-            <%--document.getElementById("articleArea").innerText = "<%=entry.getContent()%>";--%>
-            <%if (entry == null) System.out.println("entry is null.");%>
+            document.getElementById("articleArea").innerText = "<%=entry.getContent()%>";
         }
 
         function getContent() {
