@@ -6,6 +6,7 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 import presentation.model.Entry;
 import util.C3P0Utils;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -15,66 +16,54 @@ public class EntryDAO {
     private static int rows;
     private static String sql;
     private static Object[] params;
+    private static Connection conn;
 
     /**
      * Updates.
      */
 
     public static Boolean insert(String title, String author, String content) {
-
         // convert utilDate to sqlDate...
         java.util.Date utilDate = new java.util.Date();
         java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
         java.sql.Time sqlTime = new java.sql.Time(utilDate.getTime());
         String datetime = sqlDate.toString() + " " + sqlTime.toString();
 
-        qr = new QueryRunner();
-        rows = 0;
         sql = "INSERT INTO entry (title, date, author, content) VALUES (?, ?, ?, ?)";
-        params = new Object[] {
-            title, datetime, author, content
-        };
+        params = new Object[] { title, datetime, author, content };
 
-        try {
-            rows = qr.update(C3P0Utils.getConnection(), sql, params);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return rows > 0;
+        return executeUpdate(sql, params) > 0;
     }
 
     public static Boolean update(int e_id, String title, String content) {
-
-        qr = new QueryRunner();
-        rows = 0;
         sql = "UPDATE entry SET title = ?, content = ? WHERE e_id = ?";
-        params = new Object[] {
-            title, content, e_id
-        };
+        params = new Object[] { title, content, e_id };
 
-        try {
-            rows = qr.update(C3P0Utils.getConnection(), sql, params);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return rows > 0;
+        return executeUpdate(sql, params) > 0;
     }
 
-    public static Boolean delete(Entry entry) {
+    public static Boolean delete(int e_id) {
+        sql = "DELETE FROM entry WHERE e_id = ?";
+        params = new Object[] { e_id };
+
+        return executeUpdate(sql, params) > 0;
+    }
+
+    /** private */
+    private static int executeUpdate(String sql, Object[] params) {
 
         qr = new QueryRunner();
         rows = 0;
-        sql = "DELETE FROM entry WHERE e_id = ?";
 
         try {
-            rows = qr.update(C3P0Utils.getConnection(), sql, params);
+            conn = C3P0Utils.getConnection();
+            rows = qr.update(conn, sql, params);
+            conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return rows > 0;
+        return rows;
     }
 
     /**
@@ -89,7 +78,9 @@ public class EntryDAO {
         Entry entry = new Entry();
 
         try {
-            entry = qr.query(C3P0Utils.getConnection(), sql, new BeanHandler<>(Entry.class), params);
+            conn = C3P0Utils.getConnection();
+            entry = qr.query(conn, sql, new BeanHandler<>(Entry.class), params);
+            conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -105,7 +96,9 @@ public class EntryDAO {
         Entry rBean = new Entry();
 
         try {
-            rBean = (Entry) qr.query(C3P0Utils.getConnection(), sql, new BeanHandler<>(Entry.class), params);
+            conn = C3P0Utils.getConnection();
+            rBean = qr.query(C3P0Utils.getConnection(), sql, new BeanHandler<>(Entry.class), params);
+            conn = C3P0Utils.getConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -121,7 +114,9 @@ public class EntryDAO {
         List<Entry> beanList = null;
 
         try {
-            beanList = qr.query(C3P0Utils.getConnection(), sql, new BeanListHandler<>(Entry.class), params);
+            conn = C3P0Utils.getConnection();
+            beanList = qr.query(conn, sql, new BeanListHandler<>(Entry.class), params);
+            conn = C3P0Utils.getConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -136,7 +131,9 @@ public class EntryDAO {
         List<Entry> beanList = null;
 
         try {
-            beanList = qr.query(C3P0Utils.getConnection(), sql, new BeanListHandler<>(Entry.class));
+            conn = C3P0Utils.getConnection();
+            beanList = qr.query(conn, sql, new BeanListHandler<>(Entry.class));
+            conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

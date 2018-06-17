@@ -7,6 +7,7 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import presentation.model.User;
 import util.C3P0Utils;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 
 public class UserDAO {
@@ -14,6 +15,7 @@ public class UserDAO {
     private static String sql;
     private static Object[] params;
     private static QueryRunner qr;
+    private static Connection conn;
 
     public static Boolean find(String username) {
 
@@ -23,7 +25,9 @@ public class UserDAO {
         Object[] found = null;
 
         try {
-            found = qr.query(C3P0Utils.getConnection(), sql, new ArrayHandler(), params);
+            conn = C3P0Utils.getConnection();
+            found = qr.query(conn, sql, new ArrayHandler(), params);
+            conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -40,7 +44,9 @@ public class UserDAO {
         ResultSetHandler<User> resultSetHandler = new BeanHandler<>(User.class);
 
         try {
-             foundUser = qr.query(C3P0Utils.getConnection(), sql, resultSetHandler, params);
+            conn = C3P0Utils.getConnection();
+            foundUser = qr.query(conn, sql, resultSetHandler, params);
+            conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -57,7 +63,9 @@ public class UserDAO {
         int row = 0;
 
         try {
-            row = qr.update(C3P0Utils.getConnection(), sql, params);
+            conn = C3P0Utils.getConnection();
+            row = qr.update(conn, sql, params);
+            conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
