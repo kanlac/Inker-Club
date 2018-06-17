@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet {
             PrintWriter out = response.getWriter();
             out.print("<br/><br/><br/><p style='text-align: center; color: #D0021B; font-family: Menlo-Regular;'>Error: Please check your input information.</p>");
             out.close();
-
+            out.close();
         }
     }
 

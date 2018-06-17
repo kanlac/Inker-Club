@@ -55,6 +55,7 @@ public class RegisterServlet extends HttpServlet {
             PrintWriter out = response.getWriter();
             out.print("<br/><br/><br/><p style='text-align: center; color: #D0021B; font-family: Menlo-Regular;'>Error: " + message + "</p>");
             out.close();
+            out.close();
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
