@@ -32,14 +32,14 @@
 <body class="bodyPadding">
 
     <div class="navItem">
-        <%
+<%
             if (user == null) {
-        %>
+%>
             <a href="login.jsp">login</a>
             <a href="register.jsp">register</a>
-        <%
+<%
             } else {
-        %>
+%>
             <p style="float: left; text-decoration: none">
                 login as <span style="color: #649FD3"> <%=user%></span>.
             </p>
@@ -47,9 +47,9 @@
             <div style="float: right;">
                 <a href="publish.jsp">publish</a>
             </div>
-        <%
+<%
             }
-        %>
+%>
     </div>
 
     <div style="margin-top: 10%">
@@ -64,15 +64,15 @@
 
     </div>
 
-    <%
+<%
         if (entries.size() == 0) {
-    %>
+%>
     <p>Entries load error. <a href="home.jsp">Reload</a> </p>
-    <%
+<%
         } else {
             for (int i = start; i < entries.size() && i < start + piece; i++) {
                 Entry entry = entries.get(i);
-    %>
+%>
     <div class="container">
 
         <a href="entry.jsp?id=<%=entry.getE_id()%>" style="text-decoration: none">
@@ -82,39 +82,35 @@
         <p id="content"><%=entry.getContent()%></p>
 
     </div>
-    <%
+<%
             }
         }
-    %>
+%>
 
     <%------ Pagination ------%>
     <div class="paging">
-    <%
+<%
         // back button
         if (pagi == 1) {
-    %>
+%>
         <a style="opacity: 0.5;">Back.</a>
-    <%
+<%
         } else {
-    %>
+%>
         <a href="home.jsp?pagi=<%=pagi - 1%>">Back.</a>
-    <%
+<%
         }
         // prev button
         if (pagi == totalPages) {
-    %>
+%>
         <a style="opacity: 0.5;">Prev.</a>
-    <%
+<%
         } else {
-    %>
+%>
         <a href="home.jsp?pagi=<%=pagi + 1%>">Prev.</a>
-    <%
+<%
         }
-    %>
-
-    <%
-
-    %>
+%>
     </div>
 
 

@@ -28,15 +28,14 @@
         <div style="float: right;">
             <script type="text/javascript">
                 function confirmCancel() {
-                    var message = confirm("Are you sure to cancel?");
+                    var message = confirm("You modification won't be saved.");
                     if (message)
                         window.location.href="entry.jsp?id=<%=e_id%>";
                 }
                 function confirmDelete() {
-                    var message = confirm("Are you sure to delete?")
-                    if (message) {
-                    // call delete servlet..
-                    }
+                    var message = confirm("Are you sure you want delete this forever? this operation can't be retrieved.")
+                    if (message)
+                        window.location.href="/DeleteEntryServlet?id=<%=entry.getE_id()%>"
                 }
             </script>
 
