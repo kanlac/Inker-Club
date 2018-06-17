@@ -18,6 +18,7 @@
         <!-- either url-pattern or servlet-name is mandatory -->
         <!--<url-pattern>/*</url-pattern> -->
         <servlet-name>PublishServlet</servlet-name>
+        <servlet-name>EditServlet</servlet-name>
         <!--the possible values are REQUEST, FORWARD, INCLUDE, ERROR and ASYNC. If no dispatcher is defined then it’s applied only to client requests.-->
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>INCLUDE</dispatcher>

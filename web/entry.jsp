@@ -44,7 +44,7 @@
             <%
                 if (user.equals(entry.getAuthor())) {
             %>
-            <a href="publish.jsp?id=<%=entry.getE_id()%>">Edit</a>
+            <a href="edit.jsp?id=<%=entry.getE_id()%>">Edit</a>
             <%
                 }
             %>

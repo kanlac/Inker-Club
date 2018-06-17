@@ -44,13 +44,13 @@ public class EntryDAO {
         return rows > 0;
     }
 
-    public static Boolean update(Entry entry) {
+    public static Boolean update(int e_id, String title, String content) {
 
         qr = new QueryRunner();
         rows = 0;
-        sql = "UPDATE books SET title = ?, content = ? WHERE e_id = ?";
+        sql = "UPDATE entry SET title = ?, content = ? WHERE e_id = ?";
         params = new Object[] {
-            entry.getTitle(), entry.getContent(), entry.getE_id()
+            title, content, e_id
         };
 
         try {
@@ -67,9 +67,6 @@ public class EntryDAO {
         qr = new QueryRunner();
         rows = 0;
         sql = "DELETE FROM entry WHERE e_id = ?";
-        params = new Object[] {
-            entry.getE_id()
-        };
 
         try {
             rows = qr.update(C3P0Utils.getConnection(), sql, params);
@@ -89,15 +86,15 @@ public class EntryDAO {
         qr = new QueryRunner();
         sql = "SELECT * FROM entry WHERE e_id = ?";
         params = new Object[] { id };
-        Entry rBean = new Entry();
+        Entry entry = new Entry();
 
         try {
-            rBean = (Entry) qr.query(C3P0Utils.getConnection(), sql, new BeanHandler<>(Entry.class), params);
+            entry = qr.query(C3P0Utils.getConnection(), sql, new BeanHandler<>(Entry.class), params);
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return rBean;
+        return entry;
     }
 
     public static Entry getEntry(String title) {
