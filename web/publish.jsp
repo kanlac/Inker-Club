@@ -11,7 +11,7 @@
 %>
 <html>
 <head>
-    <title>Publish | Edit</title>
+    <title>Publish</title>
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <link rel="stylesheet" type="text/css" href="reset.css"/>
 </head>
@@ -26,7 +26,7 @@
             <a>Delete</a>
             <a>Cancel</a>
             <label for="submitBtn" style="cursor: pointer;">
-                <a>Save</a>
+                <a>Publish</a>
             </label>
         </div>
     </div>

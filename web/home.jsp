@@ -8,7 +8,6 @@
 <%@ page import="presentation.model.Entry" %>
 <%@ page import="java.util.List" %>
 <%@ page import="service.EntryDAO" %>
-<%@ page import="java.util.Date" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     Object user = session.getAttribute("user");
@@ -20,10 +19,8 @@
     if (totalPages == 0) totalPages = 1;
 
     int pagi;
-    if (pagiObj == null)
-        pagi = 1;
-    else
-        pagi = Integer.parseInt(pagiObj.toString());
+    if (pagiObj == null) pagi = 1;
+    else pagi = Integer.parseInt(pagiObj.toString());
     int start = (pagi - 1) * piece;
 %>
 <html>
@@ -67,7 +64,6 @@
 
     </div>
 
-    <%--<p style="text-align: center">sum: <%=entries.size()%> pages: <%=pages%> pagi: <%=pagi%></p>--%>
     <%
         if (entries.size() == 0) {
     %>
@@ -115,9 +111,6 @@
     <%
         }
     %>
-
-
-        <%--<a href="home.jsp?pagi=<%=i%>"><%=i%></a>--%>
 
     <%
 

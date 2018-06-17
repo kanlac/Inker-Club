@@ -62,7 +62,7 @@ public class UserDAO {
             e.printStackTrace();
         }
 
-        return row != 0;
+        return row > 0;
     }
 
 }
