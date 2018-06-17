@@ -22,7 +22,8 @@ public class EditServlet extends HttpServlet {
 
             PrintWriter out = response.getWriter();
             out.print("<p>Post success!</p>");
-            out.print("<a href='entry.jsp?title=" + title + "'>OK</a>");
+            out.print("<a href='entry.jsp?id=" + e_id + "'>OK</a>");
+            out.close();
         } else {
             System.out.println("Post failed.");
         }
