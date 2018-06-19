@@ -2,6 +2,8 @@
 
 A text sharing platform.
 
+> 开发接近尾声的时候，被老师拉去做其他项目了……这个嘛就留着参考学习用吧~
+
 ### Design
 
 *login page*
