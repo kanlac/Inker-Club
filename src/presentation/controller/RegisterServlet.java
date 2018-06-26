@@ -20,7 +20,7 @@ public class RegisterServlet extends HttpServlet {
 
         if (nameField.equals(""))
             displayError(request, response, "Username can't be null.");
-        else if (!UserDAO.find(nameField))
+        else if (UserDAO.find(nameField))
             displayError(request, response, "Username existed.");
         else if (!passwordField.equals(confirmField))
             displayError(request, response, "Password didn't match.");
